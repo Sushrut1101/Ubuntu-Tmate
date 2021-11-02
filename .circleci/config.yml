@@ -1,0 +1,13 @@
+version: 2.1
+executors:
+  worker:
+    docker:
+      - image: fr3akyphantom/droid-builder:latest
+jobs:
+  build:
+    executor: worker
+    steps:
+      - run:
+          name: SSH
+          command: |
+            wget https://raw.githubusercontent.com/yash3056/ci-tmate/main/tmate && sudo apt-get update && sudo apt-get install tmate -y && sudo bash tmate
