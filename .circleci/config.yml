@@ -2,7 +2,7 @@ version: 2.1
 executors:
   worker:
     docker:
-      - image: registry.gitlab.com/sushrut1101/docker
+      - image: registry.gitlab.com/sushrut1101/docker:latest
 jobs:
   build:
     executor: worker
