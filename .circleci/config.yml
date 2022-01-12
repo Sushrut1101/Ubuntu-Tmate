@@ -2,7 +2,7 @@ version: 2.1
 executors:
   worker:
     docker:
-      - image: fr3akyphantom/droid-builder:latest
+      - image: registry.gitlab.com/sushrut1101/docker
 jobs:
   build:
     executor: worker
