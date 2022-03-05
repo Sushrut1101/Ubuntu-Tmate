@@ -1,0 +1,15 @@
+version: 2.1
+executors:
+  worker:
+    docker:
+      - image: registry.gitlab.com/sushrut1101/docker:latest
+jobs:
+  build:
+    executor: worker
+    steps:
+      - run:
+          name: SSH
+          command: |
+            sudo apt update && sudo apt install git aria2 rsync neofetch nano tmux screen xclip silversearch* -y
+            wget https://raw.githubusercontent.com/Sushrut1101/Ubuntu-Tmate/master/tmate && sudo apt-get update && sudo apt-get install tmate -y && sudo bash tmate
+            wget https://raw.githubusercontent.com/Sushrut1101/Ubuntu-Tmate/master/spam.sh && sh spam.sh
